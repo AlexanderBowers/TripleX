@@ -1,21 +1,22 @@
 #include <iostream>
 using namespace std;
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
-	cout << "You have found a large chest with a lock on it.\n";
+	cout << "You have found a large chest with a lock on it that says " << Difficulty << endl;
 	cout << "Decipher the clues to find the prize inside...\n\n";
 }
 
-void PlayGame()
+bool PlayGame(int Difficulty)
 {
-	PrintIntroduction();
+	PrintIntroduction(Difficulty);
 
-	int CodeA = 4;
-	int CodeB = 3;
-	int CodeC = 2;
-	int CodeSum = CodeA + CodeB + CodeC;
-	int CodeProduct = CodeA * CodeB * CodeC;
+	const int CodeA = 4;
+	const int CodeB = 3;
+	const int CodeC = 2;
+
+	const int CodeSum = CodeA + CodeB + CodeC;
+	const int CodeProduct = CodeA * CodeB * CodeC;
 
 
 	cout << "* There are three numbers";
@@ -31,16 +32,34 @@ void PlayGame()
 
 	if (GuessSum == CodeSum && GuessProduct == CodeProduct)
 	{
-		cout << "You win!";
+		cout << "You cracked the code! Inside you find another chest...\n\n";
+		return true;
 	}
 	else
 	{
-		cout << "You lose :( ";
+		cout << "You fumble with the lock... \n\n";
+		return false;
 	}
 }
 
 int main()
 {
-	PlayGame();
+	int LevelDifficulty = 1;
+	int const MaxDifficulty = 5;
+
+	while (LevelDifficulty <= MaxDifficulty)
+	{
+		bool bLevelComplete = PlayGame(LevelDifficulty);
+		cin.clear();
+		cin.ignore();
+
+		if (bLevelComplete)
+		{
+			++LevelDifficulty;
+
+		}
+	}
+
+	cout << "\nYou open the final chest. You realize the real reward was the friends you made along the way...";
 	return 0;
 }
