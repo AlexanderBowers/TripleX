@@ -26,6 +26,15 @@ int main()
 	int GuessSum = GuessA + GuessB + GuessC;
 	int GuessProduct = GuessA * GuessB * GuessC;
 
+	if (GuessSum == CodeSum && GuessProduct == CodeProduct)
+	{
+		cout << "You win!";
+	}
+	else 
+	{
+		cout << "You lose :( "
+	}
+
 
 	return 0;
 }
