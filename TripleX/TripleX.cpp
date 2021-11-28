@@ -17,5 +17,15 @@ int main()
 	cout << "* The numbers add up to: " << CodeSum << endl;
 	cout << "* The numbers multiply to give: " << CodeProduct << endl;
 
+	int GuessA, GuessB, GuessC;
+	cout << "Please enter three numbers: \n";
+	cin >> GuessA;
+	cin >> GuessB;
+	cin >> GuessC;
+	
+	int GuessSum = GuessA + GuessB + GuessC;
+	int GuessProduct = GuessA * GuessB * GuessC;
+
+
 	return 0;
 }
