@@ -1,28 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void PrintIntroduction()
 {
 	cout << "You have found a large chest with a lock on it.\n";
-	cout << "Decipher the clues to find the prize inside...\n";
+	cout << "Decipher the clues to find the prize inside...\n\n";
+}
+
+void PlayGame()
+{
+	PrintIntroduction();
 
 	int CodeA = 4;
 	int CodeB = 3;
 	int CodeC = 2;
 	int CodeSum = CodeA + CodeB + CodeC;
 	int CodeProduct = CodeA * CodeB * CodeC;
-	
-	cout << endl;
-	cout << "* There are three numbers\n";
-	cout << "* The numbers add up to: " << CodeSum << endl;
-	cout << "* The numbers multiply to give: " << CodeProduct << endl;
+
+
+	cout << "* There are three numbers";
+	cout << "\n* The numbers add up to: " << CodeSum;
+	cout << "\n* The numbers multiply to give: " << CodeProduct;
 
 	int GuessA, GuessB, GuessC;
-	cout << "Please enter three numbers: \n";
-	cin >> GuessA;
-	cin >> GuessB;
-	cin >> GuessC;
-	
+	cout << "\n Please enter three numbers: \n";
+	cin >> GuessA >> GuessB >> GuessC;
+
 	int GuessSum = GuessA + GuessB + GuessC;
 	int GuessProduct = GuessA * GuessB * GuessC;
 
@@ -30,11 +33,14 @@ int main()
 	{
 		cout << "You win!";
 	}
-	else 
+	else
 	{
-		cout << "You lose :( "
+		cout << "You lose :( ";
 	}
+}
 
-
+int main()
+{
+	PlayGame();
 	return 0;
 }
